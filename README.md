@@ -228,10 +228,10 @@ Dataset: CIFAR-10
 
 | Experiment | BatchNorm | MaxPool | Strides | Padding | Accuracy |
 |---|---|---|---|---|---|
-| Case 1 | ❌ | ✅ | 1,1 | same | 70.25% |
-| Case 2 ⭐ | ✅ | ✅ | 1,1 | same | **72.65%** |
-| Case 3 | ✅ | ❌ | 2,2 | same | 64.25% |
-| Case 4 | ✅ | ❌ | 2,2 | valid | 64.05% |
+| Case 1 | ❌ | ✅ | 1,1 | same | 73.82% |
+| Case 2 ⭐ | ✅ | ✅ | 1,1 | same | **80.65%** |
+| Case 3 | ✅ | ❌ | 2,2 | same | 70.25% |
+| Case 4 | ✅ | ❌ | 2,2 | valid | 73.05% |
 
 ---
 
@@ -242,11 +242,11 @@ Dataset: CIFAR-10
 Adding Batch Normalization improved:
 
 ```
-70.25%
+73.82%
 
 ↓
 
-72.65%
+80.65%
 ```
 
 because it:
@@ -264,12 +264,12 @@ Results:
 ```
 Max Pooling
 
-72.65%
+80.65%
 
 
 Strided Convolution
 
-64%
+70.25%
 ```
 
 Max pooling performed better because it:
@@ -395,8 +395,8 @@ Through this project:
 
 | Model | Validation Accuracy |
 |-|-|
-| Baseline CNN | 58.00% |
-| Optimized CNN | **72.65%** |
+| Baseline CNN | 56.93% |
+| Optimized CNN | **80.65%** |
 
 ---
 

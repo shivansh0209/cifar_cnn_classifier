@@ -12,7 +12,7 @@ def FullyGeneralizedCNN(input_shape=(32, 32, 3), num_classes=10, use_batch_norm=
     if use_batch_norm: x = layers.BatchNormalization()(x)
     x = layers.Activation('relu')(x)
     
-    x = layers.Conv2D(32, (3, 3), strides=(1, 1), padding=padding, use_bias=not use_batch_norm)(x)
+    x = layers.Conv2D(32, (3, 3), strides=(1, 1), padding='same', use_bias=not use_batch_norm)(x)
     if use_batch_norm: x = layers.BatchNormalization()(x)
     x = layers.Activation('relu')(x)
     
@@ -26,7 +26,7 @@ def FullyGeneralizedCNN(input_shape=(32, 32, 3), num_classes=10, use_batch_norm=
     if use_batch_norm: x = layers.BatchNormalization()(x)
     x = layers.Activation('relu')(x)
     
-    x = layers.Conv2D(64, (3, 3), strides=(1, 1), padding=padding, use_bias=not use_batch_norm)(x)
+    x = layers.Conv2D(64, (3, 3), strides=(1, 1), padding='same', use_bias=not use_batch_norm)(x)
     if use_batch_norm: x = layers.BatchNormalization()(x)
     x = layers.Activation('relu')(x)
     
@@ -40,7 +40,7 @@ def FullyGeneralizedCNN(input_shape=(32, 32, 3), num_classes=10, use_batch_norm=
     if use_batch_norm: x = layers.BatchNormalization()(x)
     x = layers.Activation('relu')(x)
     
-    x = layers.Conv2D(128, (3, 3), strides=(1, 1), padding=padding, use_bias=not use_batch_norm)(x)
+    x = layers.Conv2D(128, (3, 3), strides=(1, 1), padding='same', use_bias=not use_batch_norm)(x)
     if use_batch_norm: x = layers.BatchNormalization()(x)
     x = layers.Activation('relu')(x)
     
