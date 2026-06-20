@@ -6,8 +6,8 @@ import math
 
 def plot_metrics(history, title = "Model metrics"):
     plt.figure(figsize=(12, 6))
-    plt.plot(history.history['accuracy'], label='Validation Accuracy')
-    plt.plot(history.history['loss'], label='Validation Loss')
+    plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+    plt.plot(history.history['val_loss'], label='Validation Loss')
     plt.title(f"{title} - Validation Accuracy and Loss")
     plt.legend()
     plt.show()
