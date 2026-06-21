@@ -42,3 +42,12 @@ BN boosted th eaccuracy from 48 to 90% accuracy. As it solved the problem of int
 
 ### 6. Custom Generalized CNN
 I first time tried to make this model class and did a lot of silly mistakes one of the biggest was that in the call method we need to pass training object to the BN so that it can differentiate whether training is going on or not
+
+### 7. Shape propagation
+Reading theory is good but not very explaining everytime. When I built I understood what is happening . Suppose you gave an input of (16, 32, 32, 3) where 16 is the batch size . Now the conv2D layer has size of (3, 3). Note that although here it is written (3, 3) but the filter will always try to match the depth of the image so it will become (3, 3, 3) behind the hood . So then it interacts with image to always make a 2-D feature map. NOw this will be done by all the filters present and for one image all its corresponding feature maps get stacked on each other. Hence the shape now becomes (16, 32, 32, 32) if there were 32 filters . As it will happen for all 16 images . Now if the next conv layer has filter size of (3, 3) then it will behind the hood become (3, 3, 32) basically same filter will get stacked on each other 32 times then again it happens....
+
+Pooling ALWAYS handle each feature map in a 2-d way and individukally , hence it only always effect the image width and hieght like form (16, 32, 32, 64) it becomes (16, 16, 16, 64).
+
+Say after all feature extraction pooling etc we are left with 16, 8, 8, 128. After flattening there will be 8 * 8 * 128 features with us. ANd this batch size 16 will be untouched as it is denoting 1 tensor for each image.
+
+Now you can assume it as a normal ANN input where a batch of 16 images with input size of 8 * 8 * 128 is entering.
